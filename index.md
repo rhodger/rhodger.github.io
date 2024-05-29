@@ -1,7 +1,7 @@
-# Landing Page #
+<h1>Landing Page</h1>
 
-Nothing really here right now just a bodged web dev environment.
+<p>Nothing really here right now just a bodged web dev environment.</p>
 
-## Projects ##
+<h2>Projects</h2>
 
-There's only [this](markdown.html)
+<p>There's only <a href="markdown.html">this</a></p>

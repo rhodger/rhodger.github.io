@@ -1,6 +1,5 @@
 ---
 ---
-
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -32,14 +31,16 @@
             <p>Recent Articles</p>
         </div>
         <div class="collection__body">
-            {% for post in site.posts %}
-            <div class="article" href="{{ post.url }}">
-                <div class="article__header">
-                    <p class="article__title">{{ post.title }}</p>
-                    <p class="article__date">{{ post.date | date_to_string }}</p>
+            {% for post in site.posts limit:3 %}
+            <a href="{{ post.url }}">
+                <div class="article"">
+                    <div class="article__header">
+                        <p class="article__title">{{ post.title }}</p>
+                        <p class="article__date">{{ post.date | date_to_string }}</p>
+                    </div>
+                    <p class="article__snippet">{{ post.excerpt }}</p>
                 </div>
-                <p class="article__snippet">{{ post.excerpt }}</p>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>

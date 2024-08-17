@@ -1,9 +1,52 @@
-<h1>Landing Page</h1>
+---
+---
 
-<p>Nothing really here right now just a bodged web dev environment.</p>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
 
-<h2>Projects</h2>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
 
-<p>There's only <a href="markdown.html">this</a></p>
-
-<p>And now <a href="magazine.html">this</a>a></p>
+<body>
+<div class="navbar">
+  <div class="title">
+    rhodger
+  </div>
+  <nav class="menu">
+    <a>articles</a>
+    <a>lists</a>
+    <a>resume</a>
+    <a>about</a>
+  </div>
+</div>
+<div class="splash">
+    <p class="name">Robert Hodgkiss</p>
+    <p class="title">Software Engineer</p>
+</div>
+<div class="content">
+    <div class="collection articles">
+        <div class="collection__header">
+            <p>Recent Articles</p>
+        </div>
+        <div class="collection__body">
+            {% for post in site.posts %}
+            <div class="article" href="{{ post.url }}">
+                <div class="article__header">
+                    <p class="article__title">{{ post.title }}</p>
+                    <p class="article__date">{{ post.date | date_to_string }}</p>
+                </div>
+                <p class="article__snippet">{{ post.excerpt }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="collection lists">
+        <div class="collection__header">
+            <p>Recent Lists</p>
+        </div>
+    </div>
+</div>
+</body>

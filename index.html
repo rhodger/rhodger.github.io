@@ -14,40 +14,58 @@
   <div class="title">
     rhodger
   </div>
-  <nav class="menu">
+  <div class="menu">
     <a>articles</a>
     <a>lists</a>
     <a>resume</a>
-    <a>about</a>
+    <a class="last">about</a>
   </div>
 </div>
+
 <div class="splash">
-    <p class="name">Robert Hodgkiss</p>
-    <p class="title">Software Engineer</p>
+    <div class="image">
+        <p>placeholder</p>
+    </div>
+    <div class="intro">
+        <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Augue nunc sem luctus platea dictum tortor libero. Viverra rhodger ullamcorper aliquam iaculis neque ante primis. Lorem ipsum odor amet, consectetuer adipiscing elit. Augue nunc sem luctus platea dictum tortor libero. Viverra rhodger ullamcorper aliquam iaculis neque ante primis.</p>
+    </div>
 </div>
+
 <div class="content">
-    <div class="collection articles">
-        <div class="collection__header">
-            <p>Recent Articles</p>
-        </div>
-        <div class="collection__body">
-            {% for post in site.posts limit:3 %}
-            <a href="{{ post.url }}">
-                <div class="article"">
-                    <div class="article__header">
-                        <p class="article__title">{{ post.title }}</p>
-                        <p class="article__date">{{ post.date | date_to_string }}</p>
-                    </div>
-                    <p class="article__snippet">{{ post.excerpt }}</p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="collection lists">
-        <div class="collection__header">
-            <p>Recent Lists</p>
-        </div>
-    </div>
+  <div class="collection articles">
+      <div class="collection__header">
+          <p>Recent Articles</p>
+      </div>
+      <div class="collection__body">
+          {% for post in site.posts limit:3 %}
+          <a href="{{ post.url }}">
+              <div class="article"">
+                  <div class="article__header">
+                      <p class="article__title">{{ post.title }} <span class="date">{{ post.date | date_to_string }}</span></p>
+                  </div>
+                  <p class="article__snippet">{{ post.excerpt }}</p>
+              </div>
+          </a>
+          {% endfor %}
+      </div>
+  </div>
+  <div class="collection lists">
+      <div class="collection__header">
+          <p>Recent Lists</p>
+      </div>
+      <div class="collection__body">
+          {% for post in site.lists limit:3 %}
+          <a href="{{ post.url }}">
+              <div class="article"">
+                  <div class="article__header">
+                      <p class="article__title">{{ post.title }}</p>
+                      <p class="article__date">{{ post.last_updated | date_to_string }}</p>
+                  </div>
+                  <p class="article__snippet">{{ post.excerpt }}</p>
+              </div>
+          </a>
+          {% endfor %}
+      </div>
+  </div>
 </div>
 </body>

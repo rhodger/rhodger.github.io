@@ -19,7 +19,6 @@ p {
 }
 
 .navbar {
-    width: 100%;
     height: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -88,8 +87,21 @@ p {
     gap: 1px;
     padding: 0 1px 1px 1px;
 
-    div {
+    .collection {
+        padding: 0;
         background-color: white;
-        padding: .5rem;
+
+        .collection__header {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            background-color: red;
+            gap: 1px;
+            padding: 0 0 1px 0;
+
+            p {
+                background-color: white;
+                padding: .5em;
+            }
+        }
     }
 }
